@@ -34,7 +34,7 @@ namespace ShiftsCalculator.Model
             }
             else
             {
-                if (GreekPublicHolidays.IsWorkDay(Date))
+                if (GreekPublicHolidays.GetInstance().IsWorkDay(Date))
                 {
                     return dateToCheck.Day == Date.Day && dateToCheck.Month == Date.Month;
                 }

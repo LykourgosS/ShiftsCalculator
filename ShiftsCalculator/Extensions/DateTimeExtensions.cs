@@ -23,12 +23,12 @@ namespace ShiftsCalculator.Extensions
 
         public static DateTime GetNextHoliday(this DateTime date)
         {
-            return date.GetNextDay(x => !GreekPublicHolidays.IsWorkDay(x));
+            return date.GetNextDay(x => !GreekPublicHolidays.GetInstance().IsWorkDay(x));
         }
 
         public static DateTime GetNextWorkday(this DateTime date)
         {
-            return date.GetNextDay(x => GreekPublicHolidays.IsWorkDay(x));
+            return date.GetNextDay(x => GreekPublicHolidays.GetInstance().IsWorkDay(x));
         }
     }
 }

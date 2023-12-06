@@ -50,7 +50,7 @@ namespace ShiftsCalculator.Utils
 
             if (dayStructure.IsLastShiftOfTheDay(shift.Structure.Index))
             {
-                date = GreekPublicHolidays.IsWorkDay(shift.Date) ? shift.Date.GetNextWorkday() : shift.Date.GetNextHoliday();
+                date = GreekPublicHolidays.GetInstance().IsWorkDay(shift.Date) ? shift.Date.GetNextWorkday() : shift.Date.GetNextHoliday();
                 dayStructure = Structures.First(x => x.AppliesTo(date));
                 shiftStructure = dayStructure.GetFirstShiftStructure();
             }
